@@ -3,7 +3,7 @@ from selenium import webdriver
 from selenium.common.exceptions import NoSuchElementException
 from selenium.common.exceptions import NoAlertPresentException
 import unittest
-from group import Group
+from contact import Contact
 
 class TestAddGroup(unittest.TestCase):
     def setUp(self):
@@ -15,7 +15,7 @@ class TestAddGroup(unittest.TestCase):
         self.open_home_page(wd)
         self.login(wd, username="admin", password="secret")
         self.open_contact_page(wd)
-        self.fill_group_form(wd, Group(firstname="", middlename="", lastname="", nickname="", title="", company="", address="", home="", mobile="", work="", fax="", email="", email2="", email3="", homepage="", byear="", ayear="", notes="", address2="", phone2=""))
+        self.fill_group_form(wd, Contact(firstname="", middlename="", lastname="", nickname="", title="", company="", address="", home="", mobile="", work="", fax="", email="", email2="", email3="", homepage="", byear="", ayear="", notes="", address2="", phone2=""))
         self.return_to_home_page(wd)
         self.logout(wd)
 
